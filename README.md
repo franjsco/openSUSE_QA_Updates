@@ -7,7 +7,7 @@
 </p>
 
 
-> A simple tool to view the latest builds of openSUSE Tumbleweed on openQA
+> A command-line interface tool to view the latest builds of openSUSE Tumbleweed on openQA
 
 
 
