@@ -6,11 +6,9 @@
 ##################################################
 
 # Built-in
-import os
 import re
 
 # Libs
-from dotenv import load_dotenv
 from colored import fg, bg, attr
 from tabulate import tabulate
 from requests_html import HTMLSession
@@ -21,6 +19,8 @@ from errors import FetchError, SelectorError
 
 
 def fetch_data_from_openqa():
+    URL="https://openqa.opensuse.org/group_overview/1"
+
     sel_xpath_builds = "//div[@id='build-results']/div"
     sel_xpath_build_name = "div[1]//*/a/text()"
     sel_xpath_build_date = "div[1]//*/abbr/@title"
@@ -31,7 +31,7 @@ def fetch_data_from_openqa():
 
     try:
         session = HTMLSession()
-        res = session.get(os.getenv('URL'))
+        res = session.get(URL)
         res.html.render()
     except:
         raise FetchError
@@ -71,7 +71,7 @@ def fetch_data_from_openqa():
 
 def main():
     try:    
-        load_dotenv()
+       
         print('%sopenSUSE QA Updates (osqu) %s' % (fg("#73ba25"), attr(0)))
         
         if utils.is_openSUSE_tumbleweed():

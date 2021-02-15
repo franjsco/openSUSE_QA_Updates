@@ -7,7 +7,6 @@ name = "pypi"
 colored = "*"
 tabulate = "*"
 requests-html = "*"
-python-dotenv = "*"
 
 [dev-packages]
 pylint = "*"
