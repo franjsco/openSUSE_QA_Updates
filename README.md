@@ -9,7 +9,7 @@
 
 > A command-line interface tool to view the latest builds of openSUSE Tumbleweed from openQA
 
-
+Data: https://openqa.opensuse.org/
 
 <a href="https://asciinema.org/a/391337" target="_blank"><img src="https://asciinema.org/a/391337.svg" /></a>
 
