@@ -8,7 +8,6 @@
 # Built-in
 import os
 import re
-import logging
 
 # Libs
 from dotenv import load_dotenv
@@ -71,11 +70,8 @@ def fetch_data_from_openqa():
 
 
 def main():
-    logging.basicConfig(filename='osqu.log', filemode='w', format='%(asctime)s - %(levelname)s - %(message)s')
-
     try:    
         load_dotenv()
-
         print('%sopenSUSE QA Updates (osqu) %s' % (fg("#73ba25"), attr(0)))
         
         if utils.is_openSUSE_tumbleweed():
@@ -101,17 +97,14 @@ def main():
                 utils.launch_upgrade()
 
     except FetchError:
-        logging.error("FetchError", exc_info=True)
         print("Fetch aborted")
-        print("Please check osqu.log")
     except SelectorError:
-        logging.error("SelectorError", exc_info=True)
         print("Selector aborted")
-        print("Please check osqu.log")
     except:
-        logging.error("Exception", exc_info=True)
         print("Error")
-        print("Please check osqu.log")
 
 
-main()
+
+if __name__ == "__main__":
+    main()
+    exit(0)
