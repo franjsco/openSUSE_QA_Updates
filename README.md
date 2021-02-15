@@ -1,4 +1,4 @@
-<h1 align="center">osqu</h1>
+<h1 align="center">osqu (openSUSE QA Updates)</h1>
 <p>
   </a>
   <a href="https://twitter.com/franjsco" target="_blank">
