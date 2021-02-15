@@ -62,7 +62,7 @@ def fetch_data_from_openqa():
                 'Build': buildname,  
                 'Date':  date,
                 'Published': published,
-                'Passed tests': '{0}% ({1}/{2})'.format(percent_passed_test, passed_test, total_test)
+                'Passed test': '{0}% ({1}/{2})'.format(percent_passed_test, passed_test, total_test)
             })
     except:
         raise SelectorError
@@ -103,14 +103,15 @@ def main():
     except FetchError:
         logging.error("FetchError", exc_info=True)
         print("Fetch aborted")
-        print("Please view osqu.log")
+        print("Please check osqu.log")
     except SelectorError:
         logging.error("SelectorError", exc_info=True)
         print("Selector aborted")
-        print("Please view osqu.log")
+        print("Please check osqu.log")
     except:
         logging.error("Exception", exc_info=True)
         print("Error")
+        print("Please check osqu.log")
 
 
 main()
