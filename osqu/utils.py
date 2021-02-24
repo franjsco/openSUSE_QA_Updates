@@ -1,6 +1,7 @@
 import subprocess
 import os
 
+
 def is_openSUSE_tumbleweed():
     cmd = "awk -F= '$1==\"ID\" { print $2 ;}' /etc/os-release"
 
@@ -25,7 +26,6 @@ def get_installed_version():
     return None
    
 
-
 def get_latest_released_version(builds):
     builds.sort(key=lambda item:item['Date'], reverse=True)
 
@@ -36,10 +36,10 @@ def get_latest_released_version(builds):
 
 def add_installed_flag_on_table(builds_data, version):
     builds = []
+    
     for build in builds_data:
         if build["Build"][-8:] == version:
             build.update({"S": "i"})
-
         
         builds.append(build)
     

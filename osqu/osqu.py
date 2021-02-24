@@ -36,8 +36,7 @@ def fetch_data_from_openqa():
         res.html.render()
     except:
         raise errors.FetchError
-
-   
+ 
     try:
         for build in res.html.xpath(sel_xpath_builds):
             dashboard = ''.join(build.xpath(sel_xpath_build_dashboard)).split("\n")
@@ -67,6 +66,11 @@ def fetch_data_from_openqa():
 
 
 def main():
+    openqa_data = None
+    current_version = None
+    latest_version = None
+    final_table = None
+
     try:
         print('%sopenSUSE QA Updates (osqu) %s' % (fg("#73ba25"), attr(0)))
         
@@ -94,8 +98,10 @@ def main():
 
     except errors.FetchError:
         print("Fetch aborted")
+        traceback.print_exc()
     except errors.SelectorError:
         print("Selector aborted")
+        traceback.print_exc()
     except Exception:
         print("Error")
         traceback.print_exc()
@@ -104,4 +110,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    exit(0)
