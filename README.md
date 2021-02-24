@@ -30,13 +30,13 @@ Data: https://openqa.opensuse.org/
 
 3. Make the script executable:
     ```sh
-    chmod +x src/osqu.py
+    chmod +x osqu/osqu.py
     ```
 
 4. Create a symbolic link:
     ```sh
     cd /usr/local/bin
-    sudo ln -s ~/.osqu/src/osqu.py osqu
+    sudo ln -s ~/.osqu/osqu/osqu.py osqu
     ```
 
 
