@@ -7,6 +7,7 @@
 
 # Built-in
 import re
+import traceback
 
 # Libs
 from colored import fg, bg, attr
@@ -14,8 +15,8 @@ from tabulate import tabulate
 from requests_html import HTMLSession
 
 # Modules
-import utils
-from errors import FetchError, SelectorError
+from . import utils
+from . import errors
 
 
 def fetch_data_from_openqa():
@@ -34,17 +35,15 @@ def fetch_data_from_openqa():
         res = session.get(URL)
         res.html.render()
     except:
-        raise FetchError
-    
-    
+        raise errors.FetchError
+
+   
     try:
         for build in res.html.xpath(sel_xpath_builds):
-            
             dashboard = ''.join(build.xpath(sel_xpath_build_dashboard)).split("\n")
             buildname = ''.join(build.xpath(sel_xpath_build_name))
             date = ''.join(build.xpath(sel_xpath_build_date))[:10]
             published = 'Yes' if ''.join(build.xpath(sel_xpath_build_published_flag)) else 'No'
-
 
             regexp_total = re.compile("total")
             regexp_passed = re.compile("passed")
@@ -52,9 +51,7 @@ def fetch_data_from_openqa():
             total_test =  int(''.join(list(filter(regexp_total.match, dashboard))).split(":")[1])
             passed_test = int(''.join(list(filter(regexp_passed.match, dashboard))).split(":")[1])
            
-
             percent_passed_test = round(passed_test / total_test * 100)
-
 
             builds.append({
                 'S': ' ',
@@ -64,14 +61,13 @@ def fetch_data_from_openqa():
                 'Passed test': '{0}% ({1}/{2})'.format(percent_passed_test, passed_test, total_test)
             })
     except:
-        raise SelectorError
+        raise errors.SelectorError
 
     return builds
 
 
 def main():
-    try:    
-       
+    try:
         print('%sopenSUSE QA Updates (osqu) %s' % (fg("#73ba25"), attr(0)))
         
         if utils.is_openSUSE_tumbleweed():
@@ -96,12 +92,13 @@ def main():
             if choice.upper() == 'Y':
                 utils.launch_upgrade()
 
-    except FetchError:
+    except errors.FetchError:
         print("Fetch aborted")
-    except SelectorError:
+    except errors.SelectorError:
         print("Selector aborted")
-    except:
+    except Exception:
         print("Error")
+        traceback.print_exc()
 
 
 
