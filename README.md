@@ -16,6 +16,7 @@ Data: https://openqa.opensuse.org/
 ## Requirements
 - GNU/Linux
 - Python3
+- pip3
 
 
 ## Installation
