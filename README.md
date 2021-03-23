@@ -13,6 +13,10 @@ Data: https://openqa.opensuse.org/
 
 <a href="https://asciinema.org/a/391337" target="_blank"><img src="https://asciinema.org/a/391337.svg" /></a>
 
+## Requirements
+- GNU/Linux
+- Python3
+
 
 ## Installation
 
