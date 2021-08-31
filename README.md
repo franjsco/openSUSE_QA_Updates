@@ -1,4 +1,4 @@
-<h1 align="center">osqu (openSUSE QA Updates)</h1>
+<h1 align="center">osqu (openSUSE QA Updates) 🧪</h1>
 <p>
     <a href="https://github.com/franjsco/osqu/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
