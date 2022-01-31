@@ -30,7 +30,7 @@ Data: https://openqa.opensuse.org/
     ```sh
     git clone https://github.com/franjsco/openSUSE_QA_Updates
 
-    cd osqu
+    cd openSUSE_QA_Updates
     ```
 
 2. Activate Virtual env and install dependencies:
