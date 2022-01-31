@@ -12,7 +12,7 @@
 </p>
 
 
-> A command-line interface tool to view the latest builds of openSUSE Tumbleweed from openQA
+> A command-line tool to view the latest builds of openSUSE Tumbleweed from openQA
 
 Data: https://openqa.opensuse.org/
 
