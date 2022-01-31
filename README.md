@@ -1,10 +1,10 @@
-<h1 align="center">osqu (openSUSE QA Updates) 🧪</h1>
+<h1 align="center">osqu - openSUSE QA Updates 🧪</h1>
 <p>
-    <a href="https://github.com/franjsco/osqu/graphs/commit-activity" target="_blank">
+    <a href="https://github.com/franjsco/openSUSE_QA_Updates/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-  <a href="https://github.com/franjsco/iliadly/blob/master/LICENSE" target="_blank">
-    <img alt="License: GPL--2.0" src="https://img.shields.io/github/license/franjsco/osqu" />
+  <a href="https://github.com/franjsco/openSUSE_QA_Updates/blob/master/LICENSE" target="_blank">
+    <img alt="License: GPL--2.0" src="https://img.shields.io/github/license/franjsco/openSUSE_QA_Updates" />
   </a>
   <a href="https://twitter.com/franjsco" target="_blank">
     <img alt="Twitter: franjsco" src="https://img.shields.io/twitter/follow/franjsco.svg?style=social" />
@@ -28,7 +28,7 @@ Data: https://openqa.opensuse.org/
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/franjsco/osqu
+    git clone https://github.com/franjsco/openSUSE_QA_Updates
 
     cd osqu
     ```
