@@ -24,17 +24,20 @@ Data: https://openqa.opensuse.org/
 - pip3
 
 
-## Installation
+## Development
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/franjsco/osqu ~/.osqu
+    git clone https://github.com/franjsco/osqu
 
-    cd ~/.osqu
+    cd osqu
     ```
 
-2. Install dependencies:
+2. Activate Virtual env and install dependencies:
     ```sh
+    python3 -m venv venv
+    source venv/bin/activate 
+    
     pip3 install -r requirements.txt
     ```
 
@@ -43,15 +46,8 @@ Data: https://openqa.opensuse.org/
     chmod +x osqu.sh
     ```
 
-4. Create a symbolic link:
+4. Launch:
     ```sh
-    cd /usr/local/bin
-    sudo ln -s ~/.osqu/osqu.sh osqu
+    ./osqu.sh
     ```
 
-
-## Use
-Open the terminal and launch:
-```sh
-osqu
-```

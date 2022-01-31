@@ -23,7 +23,7 @@ def fetch_data_from_openqa():
     URL="https://openqa.opensuse.org/group_overview/1"
 
     sel_xpath_builds = "//div[@id='build-results']/div"
-    sel_xpath_build_name = "div[1]//*/a/text()"
+    sel_xpath_build_name = "div[1]//span/a/text()"
     sel_xpath_build_date = "div[1]//*/abbr/@title"
     sel_xpath_build_published_flag= "div[1]//*/i[@title='published']/text()"
     sel_xpath_build_dashboard = "//div[2]/div[contains(@class,'build-dashboard')]/@title"
